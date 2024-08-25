@@ -1,0 +1,164 @@
+---
+// src/pages/index.astro
+import Header from "../components/Header.astro";
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/resources/images/Astro.png" />
+  <title>Mi Portafolio</title>
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: "Inter", sans-serif;
+    }
+    /* Estilos para la imagen PNG */
+    .logo-img {
+      max-width: 150px; /* Tamaño máximo del logo */
+      height: auto; /* Mantiene la proporción */
+    }
+
+    @media (max-width: 768px) {
+      .logo-img {
+        max-width: 80px; /* Tamaño menor en pantallas más pequeñas */
+      }
+    }
+
+    /* Estilos para centrar el contenedor */
+    .logo-container {
+      display: flex;
+      justify-content: center; /* Centra horizontalmente */
+      align-items: center; /* Centra verticalmente */
+      height: 150px; /* Altura suficiente para centrar verticalmente */
+      margin-bottom: 40px; /* Espacio debajo del logo */
+    }
+
+    /* Estilos para la sección principal */
+    .hero-section {
+      background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    /* Estilos para las tarjetas */
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-header {
+      font-size: 1.5rem;
+      color: #374151;
+    }
+
+    .card-content {
+      color: #6b7280;
+    }
+
+    .container {
+      max-width: 1200px;
+    }
+  </style>
+</head>
+
+<Header />
+
+<main class="bg-gray-100 text-gray-900">
+  <section class="hero-section">
+    <div class="container mx-auto">
+      <div class="logo-container">
+        <a href="https://astro.build/" target="_blank">
+          <img
+            src="/resources/images/Astro.png"
+            alt="Logo"
+            class="logo-img"
+            title="Hola, hazme click y te llevaré a astro!"
+          />
+        </a>
+      </div>
+      <h1 class="text-4xl font-bold text-gray-800 mb-4">
+        Bienvenido a mi Portafolio
+      </h1>
+      <p class="text-lg text-gray-600 mb-8">
+        Para ofrecerte la mejor experiencia posible, he utilizado Astro para
+        construir este portafolio. ¿Por qué Astro? Aquí te cuento los motivos:
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white py-20">
+    <div
+      class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+    >
+      <div class="card">
+        <h3 class="card-header">1. Rendimiento Optimizado</h3>
+        <p class="card-content">
+          Astro genera páginas estáticas que se cargan increíblemente rápido.
+          Esto significa que tu experiencia aquí es fluida y eficiente, sin
+          importar el dispositivo que uses.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="card-header">2. Flexibilidad de Componentes</h3>
+        <p class="card-content">
+          Con Astro, puedo utilizar componentes de diferentes frameworks (como
+          React, Vue, Svelte, etc.) en un solo proyecto. Esto me permite
+          combinar lo mejor de cada tecnología y ofrecer una experiencia rica y
+          moderna.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="card-header">3. Experiencia de Desarrollo Simplificada</h3>
+        <p class="card-content">
+          Astro simplifica la creación de sitios web al optimizar la carga de
+          recursos y facilitar la integración de contenido. Esto me permite
+          centrarme en ofrecerte contenido de calidad sin preocuparme por la
+          complejidad técnica.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="card-header">4. Optimización Automática</h3>
+        <p class="card-content">
+          Astro maneja la optimización de imágenes y otros recursos
+          automáticamente. Esto asegura que cada elemento se cargue solo cuando
+          sea necesario, mejorando el tiempo de carga y la eficiencia del sitio.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="card-header">5. Mejor SEO</h3>
+        <p class="card-content">
+          Con Astro, la estructura y el contenido de mi portafolio están
+          optimizados para los motores de búsqueda, ayudando a que mi trabajo
+          sea más visible en la web.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="card-header">6. Escalabilidad y Mantenibilidad</h3>
+        <p class="card-content">
+          Astro maneja proyectos de cualquier tamaño, desde sitios pequeños
+          hasta aplicaciones grandes, manteniendo un rendimiento sólido. Su
+          estructura modular facilita la actualización y el mantenimiento a lo
+          largo del tiempo.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="card-header">7. Ecosistema y Comunidad</h3>
+        <p class="card-content">
+          Con un ecosistema creciente de plugins y una comunidad activa, Astro
+          ofrece soporte, recursos y contribuciones que enriquecen el desarrollo
+          y la evolución del framework.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>

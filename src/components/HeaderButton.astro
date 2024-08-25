@@ -1,0 +1,15 @@
+---
+// src/components/HeaderButton.astro
+export interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<a
+  href={href}
+  class="flex items-center justify-center px-4 py-2 rounded-md text-sm font-medium transition-colors duration-300 hover:bg-gray-700"
+>
+  <slot />
+</a>

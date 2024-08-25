@@ -1,0 +1,177 @@
+---
+import Header from "../components/Header.astro";
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- otros elementos del head -->
+</head>
+<Header />
+<style>
+  /* Estilos generales */
+  body {
+    font-family: "Inter", sans-serif;
+  }
+
+  /* Estilos para las tarjetas */
+  .card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition:
+      transform 0.3s,
+      box-shadow 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-header {
+    font-size: 1.5rem;
+    color: #374151;
+  }
+
+  .card-content {
+    color: #6b7280;
+  }
+
+  .container {
+    max-width: 1200px;
+  }
+</style>
+<main class="bg-gray-100 text-gray-900">
+  <section class="bg-white py-20">
+    <div class="container mx-auto text-center">
+      <h1 class="text-4xl font-bold text-gray-800 mb-4">Sobre mí</h1>
+      <p class="text-lg text-gray-600 mb-8">
+        Soy un desarrollador Full Stack con <span id="experience-duration"
+          >cargando...</span
+        > de experiencia, especializado en Angular y Java Spring Boot, y con una
+        sólida formación en el grado superior Desarrollo de Aplicaciones Multiplataforma
+        (DAM). A lo largo de mi carrera, he trabajado en proyectos donde he implementado
+        y optimizado aplicaciones web completas, desde el frontend hasta el backend,
+        tocando bases de datos, siempre con un enfoque en la accesibilidad para el
+        usuario y la resolución de problemas.
+      </p>
+      <a
+        href="/cv"
+        class="inline-block bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600"
+        >Descarga mi CV</a
+      >
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold text-center text-gray-800 mb-10">
+        Mis habilidades técnicas incluyen:
+      </h2>
+      <div class="grid grid-cols-1 gap-8">
+        <!-- Frontend Habilidad -->
+        <div class="card bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-2xl font-semibold mb-2">Frontend</h3>
+          <p class="text-gray-600">
+            Experiencia avanzada en Angular, TypeScript, HTML y CSS, con un
+            enfoque en crear interfaces accesibles y fáciles de usar. He
+            realizado pruebas unitarias en frontend utilizando Cypress para
+            asegurar la calidad y funcionalidad del código.
+          </p>
+        </div>
+
+        <!-- Backend Habilidad -->
+        <div class="card bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-2xl font-semibold mb-2">Backend</h3>
+          <p class="text-gray-600">
+            Desarrollo robusto con Java Spring Boot, implementando APIs RESTful
+            y gestionando bases de datos. También he realizado pruebas unitarias
+            con JUnit para garantizar la fiabilidad y el rendimiento de los
+            servicios backend.
+          </p>
+        </div>
+
+        <!-- Metodología Agile Habilidad -->
+        <div class="card bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-2xl font-semibold mb-2">Metodología Agile</h3>
+          <p class="text-gray-600">
+            Acostumbrado a trabajar en entornos ágiles, colaborando eficazmente
+            con equipos multidisciplinarios para entregar soluciones de alta
+            calidad dentro de los plazos establecidos.
+          </p>
+        </div>
+
+        <!-- Gestión de Código y Control de Versiones Habilidad -->
+        <div class="card bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-2xl font-semibold mb-2">
+            Gestión de Código y Control de Versiones
+          </h3>
+          <p class="text-gray-600">
+            Manejo avanzado de Pull Requests (PR), revisión de código, y gestión
+            de versiones en plataformas como GitHub, asegurando un flujo de
+            trabajo organizado y colaborativo.
+          </p>
+        </div>
+
+        <!-- Investigación y Resolución de Problemas Habilidad -->
+        <div class="card bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-2xl font-semibold mb-2">
+            Investigación y Resolución de Problemas
+          </h3>
+          <p class="text-gray-600">
+            Fuerte capacidad para investigar y evaluar nuevas librerías y
+            tecnologías, adaptando soluciones innovadoras que se alineen con las
+            necesidades del proyecto.
+          </p>
+        </div>
+
+        <!-- Responsabilidad y Progreso Habilidad -->
+        <div class="card bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-2xl font-semibold mb-2">
+            Responsabilidad y Progreso
+          </h3>
+          <p class="text-gray-600">
+            Soy una persona sincera, responsable y comprometida con mi
+            desarrollo profesional. Disfruto de aprender continuamente y me
+            esfuerzo por superar las expectativas en cada tarea que realizo.
+          </p>
+        </div>
+
+        <!-- Bases de Datos Habilidad -->
+        <div class="card bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-2xl font-semibold mb-2">Bases de Datos</h3>
+          <p class="text-gray-600">
+            Conocimiento en diseño, implementación y gestión de bases de datos
+            relacionales y no relacionales, incluyendo Oracle y bases de datos
+            NoSQL.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Fecha de inicio
+    const startDate = new Date("2021-12-21");
+
+    // Fecha actual
+    const now = new Date();
+
+    // Cálculo de años y meses
+    let years = now.getFullYear() - startDate.getFullYear();
+    let months = now.getMonth() - startDate.getMonth();
+
+    if (months < 0) {
+      years -= 1;
+      months += 12;
+    }
+
+    // Mostrar el resultado
+    const experienceDuration = document.getElementById("experience-duration");
+    if (experienceDuration) {
+      experienceDuration.textContent = `${years} años y ${months} meses`;
+    }
+  });
+</script>
